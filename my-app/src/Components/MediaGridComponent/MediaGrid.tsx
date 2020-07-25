@@ -4,15 +4,15 @@ import { Grid } from '@material-ui/core';
 import './MediaGrid.css';
 
 interface IState {
-    links: any[];
-    data: any[];
+    title: string;
+    poster_path: string;
 }
 interface IMediaGridProps {
     SearchQuery: (string | null);
 
 }
 function MediaGrid(props: IMediaGridProps) {
-    const [ItemArray, setItemArray] = useState<IState[]>([{ links: [], data: [] }]);
+    const [ItemArray, setItemArray] = useState<IState[]>([{poster_path: "", title: ""}]);
 
     useEffect(() => {
         fetch('https://api.themoviedb.org/3/search/movie?api_key=fa2f08693f7614ef9efb033dc32bc48e&query='+ props.SearchQuery)
@@ -21,26 +21,29 @@ function MediaGrid(props: IMediaGridProps) {
                 setItemArray(data.results)
                 console.log(data)
                 console.log(data.results)
-                console.log(data.results[1].title)
+               
             })
             .catch(() => console.log("it didn't work")
             );
 
     }, [props.SearchQuery]);
 
-    console.log(ItemArray[2]);
+  
 
     var Cards: JSX.Element[] = [];
-    /*ItemArray.forEach((el: IState, i: Number) => {
-        if (!el || !el.links || !el.data) {
+    ItemArray.forEach((el: IState) => {
+        if (el.poster_path == "") {
+            //console.log(el.title);
+            console.log(el['title'])
             return;
         }
+       
         Cards.push(
-            <Grid key={"card_"+i} item sm={6} md={4} lg={3} className="MediaGridCard">
-                <MediaCard ImageUrl={el[][0]['href']} Description={el[][0]['description']} />
+            <Grid key={"card_"} item sm={6} md={4} lg={3} className="MediaGridCard">
+                <MediaCard ImageUrl={el.poster_path} Title={el.title} />
             </Grid>)
     })
-    */
+    
 
     return (
         <div>

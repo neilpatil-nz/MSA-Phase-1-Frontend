@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import './App.css';
 import SearchBar from './Components/SearchBarComponents/SearchBar';
-import { IUserInput } from '././Common/Interfaces';
-import MediaGrid from '././Components/MediaGridComponent/MediaGrid';
+import MediaGrid from './Components/MediaGridComponent/MediaGrid';
+import { IUserInput } from './Common/Interfaces';
 import {createMuiTheme, MuiThemeProvider} from '@material-ui/core';
 
 const theme = createMuiTheme({
@@ -18,7 +18,7 @@ const theme = createMuiTheme({
 })
 function App() {
   const [UserInput, setUserInput] = useState<IUserInput>({
-    SearchQuery: "Batman"
+    SearchQuery: "Shawshank"
   });
   function SetUserInput(a: IUserInput) {
     setUserInput(a);    
@@ -29,7 +29,7 @@ function App() {
       <h2>IMDB Movie Search</h2>
       <MuiThemeProvider theme={theme}>
           <SearchBar SetUserInput={(a: IUserInput) => SetUserInput(a)}/>
-          <MediaGrid SearchQuery={UserInput.SearchQuery}></MediaGrid>
+          <MediaGrid SearchQuery={UserInput.SearchQuery}/>
       </MuiThemeProvider>
     </div>
   );
