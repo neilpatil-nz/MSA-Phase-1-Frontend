@@ -3,6 +3,10 @@ import MediaCard from '../MediaCardComponent/MediaCard';
 import { Grid } from '@material-ui/core';
 import './MediaGrid.css';
 
+
+
+
+const api_key = process.env.REACT_APP_API_KEY;
 interface IState {
     title: string;
     poster_path: string;
@@ -15,7 +19,7 @@ function MediaGrid(props: IMediaGridProps) {
     const [ItemArray, setItemArray] = useState<IState[]>([{poster_path: "", title: ""}]);
 
     useEffect(() => {
-        fetch('https://api.themoviedb.org/3/search/movie?api_key=fa2f08693f7614ef9efb033dc32bc48e&query='+ props.SearchQuery)
+        fetch('https://api.themoviedb.org/3/search/movie?api_key='+ api_key + '&query='+ props.SearchQuery)
             .then(data => data.json())
             .then(data => {
                 setItemArray(data.results)
@@ -32,7 +36,7 @@ function MediaGrid(props: IMediaGridProps) {
 
     var Cards: JSX.Element[] = [];
     ItemArray.forEach((el: IState) => {
-        if (el.poster_path == "") {
+        if (el.poster_path === "") {
             //console.log(el.title);
             console.log(el['title'])
             return;

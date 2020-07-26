@@ -19,7 +19,7 @@ function MediaCard(props: IMediaCardProps) {
                     
                      <CardMedia
                         className="MediaCardImage"
-                        image={'https://image.tmdb.org/t/p/w500/' + props.ImageUrl/*'https://i.imgur.com/qCxJ3Es.jpeg'*/}
+                        image={'https://image.tmdb.org/t/p/original/' + props.ImageUrl/*'https://i.imgur.com/qCxJ3Es.jpeg'*/}
                     />
                     <CardContent>
                         <Typography variant="body2" color="textSecondary" component="p" className="MediaCardTitle">

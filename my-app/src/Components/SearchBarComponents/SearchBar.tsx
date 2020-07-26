@@ -29,7 +29,7 @@ function SearchBar(props:ISearchBarProps) {
     }
 
     return <div className="SearchBarContainer">
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
             <Grid item xs={6} sm={3}>
                 <TextField
                     required
@@ -42,9 +42,9 @@ function SearchBar(props:ISearchBarProps) {
                     onChange={e => handleSearchQueryChange(e.target.value)}
                 />
             </Grid>
-            <Grid item xs={6} sm={3}>
+            <Grid item xs={6} sm={2}>
                 <Button variant="contained" color="primary" onClick={handleSubmit}>
-                    Submit
+                    Search
                 </Button>
             </Grid>
         </Grid>
