@@ -19,7 +19,7 @@ function MediaGrid(props: IMediaGridProps) {
     const [ItemArray, setItemArray] = useState<IState[]>([{poster_path: "", title: ""}]);
 
     useEffect(() => {
-        fetch('https://api.themoviedb.org/3/search/movie?api_key='+ api_key + '&query='+ props.SearchQuery)
+        fetch('https://api.themoviedb.org/3/search/movie?api_key=fa2f08693f7614ef9efb033dc32bc48e&query='+ props.SearchQuery)
             .then(data => data.json())
             .then(data => {
                 setItemArray(data.results)
