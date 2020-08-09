@@ -25,7 +25,7 @@ It excludes any commits to the `README.md` file.
        exclude:
           - README.md
               
-The API that I used for the project comes with a key, but I was not able to hide it through the aforementioned code, as can be seen in the `azure_pipelines.yml` file. Fortunately, the API does not have a daily limit. 
+The API that I used for the project comes with a key, but I was not able to hide it through the aforementioned code, as can be seen in the `azure_pipelines.yml` file. Fortunately, the API service does not have a daily limit. 
               
     - task: CmdLine@2
         inputs:
