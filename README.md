@@ -1,7 +1,6 @@
-<<<<<<< HEAD
+
 # MSA-Phase-1-DevOps
- 
-=======
+
 # MSA Phase 1 - Movie Searcher (IMDB Rip-off)
 
 This is my project for the MSA Phase 1 Frontend & Dev Ops assignment. It simply fetches any Movie or TV Show through a Movie Database API.
@@ -41,4 +40,4 @@ The API that I used for the project comes with a key, but I was not able to hide
 * Improve UI
 * Implement a way to hide the API key
 * More search filters
->>>>>>> e93c6fb67c60f64c0277054ffbb83e1c81baa943
+
